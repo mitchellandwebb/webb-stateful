@@ -5,34 +5,41 @@
         "path": "./",
         "core": {
           "dependencies": [
-            "aff",
-            "arrays",
-            "console",
-            "effect",
-            "foldable-traversable",
-            "maybe",
-            "monad-loops",
-            "prelude",
-            "strings",
-            "transformers",
-            "tuples",
-            "unsafe-coerce",
-            "webb-monad",
-            "webb-refer",
-            "webb-test"
+            {
+              "arrays": ">=7.3.0 <8.0.0"
+            },
+            {
+              "effect": ">=4.0.0 <5.0.0"
+            },
+            {
+              "foldable-traversable": ">=6.0.0 <7.0.0"
+            },
+            {
+              "lists": ">=7.0.0 <8.0.0"
+            },
+            {
+              "maybe": ">=6.0.0 <7.0.0"
+            },
+            {
+              "ordered-collections": ">=3.2.0 <4.0.0"
+            },
+            {
+              "prelude": ">=6.0.2 <7.0.0"
+            },
+            {
+              "tuples": ">=7.0.0 <8.0.0"
+            },
+            {
+              "webb-monad": ">=0.0.2 <0.0.3"
+            },
+            {
+              "webb-refer": ">=0.0.2 <0.0.3"
+            }
           ],
           "build_plan": [
             "aff",
-            "aff-promise",
-            "ansi",
-            "argonaut-codecs",
-            "argonaut-core",
-            "arraybuffer-types",
             "arrays",
-            "avar",
             "bifunctors",
-            "catenable-lists",
-            "console",
             "const",
             "contravariant",
             "control",
@@ -44,54 +51,32 @@
             "enums",
             "exceptions",
             "exists",
-            "exitcodes",
             "foldable-traversable",
-            "foreign",
             "foreign-object",
-            "fork",
-            "free",
             "functions",
             "functors",
             "gen",
             "identity",
             "integers",
             "invariant",
-            "js-date",
             "lazy",
             "lists",
             "maybe",
-            "mmorph",
             "monad-loops",
             "newtype",
-            "node-buffer",
-            "node-event-emitter",
-            "node-fs",
-            "node-path",
-            "node-process",
-            "node-streams",
             "nonempty",
-            "now",
-            "nullable",
             "numbers",
-            "open-memoize",
-            "optparse",
             "ordered-collections",
             "orders",
             "parallel",
             "partial",
-            "pipes",
-            "posix-types",
             "prelude",
             "profunctor",
             "profunctor-lenses",
             "record",
             "refs",
             "safe-coerce",
-            "spec",
-            "spec-discovery",
-            "spec-node",
             "st",
-            "strings",
             "tailrec",
             "transformers",
             "tuples",
@@ -100,12 +85,12 @@
             "unfoldable",
             "unsafe-coerce",
             "webb-monad",
-            "webb-refer",
-            "webb-test"
+            "webb-refer"
           ]
         },
         "test": {
           "dependencies": [
+            "console",
             "spec",
             "spec-discovery",
             "spec-node",
