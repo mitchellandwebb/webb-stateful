@@ -6,7 +6,7 @@ import Webb.State.Prelude
 import Data.Array as A
 import Data.Map (Map)
 import Data.Map as M
-import Data.Maybe (Maybe)
+import Data.Maybe (Maybe(..))
 import Data.Set (Set)
 import Data.Traversable (for)
 import Data.Tuple (Tuple)
@@ -46,6 +46,19 @@ delete coll k = M.delete k :> coll
 lookup :: forall k v m. Ord k => MonadEffect m =>
   MapColl k v -> k -> m (Maybe v)
 lookup coll k = M.lookup k <: coll
+
+member :: forall k v m. Ord k => MonadEffect m =>
+  MapColl k v -> k -> m Boolean
+member coll k = M.member k <: coll
+
+update :: forall k v m . Ord k => MonadEffect m =>
+  MapColl k v -> k -> v -> (v -> v) -> m Unit
+update coll k default f = do
+  M.alter alter k :> coll
+  where
+  alter mval = case mval of
+    Nothing -> pure default
+    Just val -> pure $ f val
 
 keys :: forall k v m. MonadEffect m =>
   MapColl k v -> m (Set k)
